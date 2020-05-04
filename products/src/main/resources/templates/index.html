@@ -28,7 +28,7 @@
         <span th:errors="*{brand}" style="color:red"></span>
         <br>
         <label for="desc">Descripcion del producto: </label>
-        <input type="text" name="desc" id="desc" th:field="*{desc}" placeholder="Computador gaming">
+        <textarea name="desc" id="desc" th:field="*{desc}" placeholder="Computador gaming" cols="30" rows="10"></textarea>
         <br>
         <span th:errors="*{desc}" style="color:red"></span>
         <br>

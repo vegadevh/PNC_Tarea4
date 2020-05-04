@@ -15,10 +15,10 @@ public class Product {
 	@Size(min=1, max=100, message="El nombre del producto debe tener un maximo de 100 caractares")
 	private String name;
 	@NotEmpty(message="El campo no puede estar vacio")
-	@Size(min=1, max=100, message="El nombre del producto debe tener un maximo de 100 caractares")
+	@Size(min=1, max=100, message="La marca del producto debe tener un maximo de 100 caractares")
 	private String brand;
 	@NotEmpty(message="El campo no puede estar vacio")
-	@Size(min=1, max=500, message="El nombre del producto debe tener 500 caractares")
+	@Size(min=1, max=500, message="La descripcion del producto debe tener un maximo de 500 caractares")
 	private String desc;
 	@NotEmpty(message="El campo no puede estar vacio")
 	@Digits(integer=10, fraction=0, message="No puede ingresar numeros decimales")
