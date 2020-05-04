@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Producto</title>
+</head>
+
+<body>
+    <h1>Ingresar Productos</h1>
+
+    <form th:action="@{/validar}" th:object="${product}" method="post">
+
+        <label for="id">Id de producto: </label>
+        <input type="text" name="id" id="id" th:field="*{id}" placeholder="1A2B3C4D5E6F">
+        <br>
+        <span th:errors="*{id}" style="color:red"></span>
+        <br>
+        <label for="name">Nombre del producto: </label>
+        <input type="text" name="name" id="name" th:field="*{name}" placeholder="Computador">
+        <br>
+        <span th:errors="*{name}" style="color:red"></span>
+        <br>
+        <label for="brand">Marca del producto: </label>
+        <input type="text" name="brand" id="brand" th:field="*{brand}" placeholder="JEN">
+        <br>
+        <span th:errors="*{brand}" style="color:red"></span>
+        <br>
+        <label for="desc">Descripcion del producto: </label>
+        <input type="text" name="desc" id="desc" th:field="*{desc}" placeholder="Computador gaming">
+        <br>
+        <span th:errors="*{desc}" style="color:red"></span>
+        <br>
+        <label for="stock">Cantidad de existencias: </label>
+        <input type="text" name="stock" id="stock" th:field="*{stock}" placeholder="#">
+        <br>
+        <span th:errors="*{stock}" style="color:red"></span>
+        <br>
+        <label for="dateIn">Fecha de ingreso: </label>
+        <input type="text" name="dateIn" id="dateIn" th:field="*{dateIn}" placeholder="01/01/2000">
+        <br>
+        <span th:errors="*{dateIn}" style="color:red"></span>
+        <br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+
+</html>
