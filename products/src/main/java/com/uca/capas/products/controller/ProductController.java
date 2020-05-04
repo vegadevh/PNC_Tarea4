@@ -1,6 +1,5 @@
 package com.uca.capas.products.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -15,7 +14,7 @@ import com.uca.capas.products.domain.Product;
 public class ProductController {
 	
 	@RequestMapping("/productos")
-	public ModelAndView productos(HttpServletRequest request) {
+	public ModelAndView productos() {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.setViewName("index");
@@ -25,7 +24,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/validar")
-	public ModelAndView procesar(@Valid @ModelAttribute Product product, BindingResult result, HttpServletRequest request) {
+	public ModelAndView procesar(@Valid @ModelAttribute Product product, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
 		
 		if(result.hasErrors()) {
@@ -33,7 +32,7 @@ public class ProductController {
 		}else {
 			product.getStock();
 			mav.setViewName("validar");
-			mav.addObject("nameProduct", "Producto " +"<b>" + product.getName() + "</b>" + " guardado con éxito" + product.getStock());
+			mav.addObject("nameProduct", "Producto " + product.getName() + " guardado con éxito");
 		}
 		
 		return mav;
